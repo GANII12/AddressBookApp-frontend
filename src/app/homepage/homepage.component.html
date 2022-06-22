@@ -1,0 +1,37 @@
+<div class="main-content">
+    <div class="main-header-content">
+      <div class="addressbook-detail-text">
+        Address Book Details
+      </div>
+        <button class="add-button" (click)="onAddAddress()"><img src=" " alt="" />Add Person</button>
+    </div>
+</div>
+    <div class="main-content">
+    <div class="table-main">
+      <table id="table-display" class="table">
+        <tr>
+          <th>Id</th>  
+          <th>Name</th>
+          <th>state</th>
+          <th>number</th>
+          <th>city</th>
+          <th>pincode</th>
+          <th>address</th>
+          <th>Action</th>
+         </tr>
+         <tr *ngFor="let add of addressbook.data">
+          <td>{{add.id}}</td>
+          <td>{{add.name | uppercase}}</td>
+          <td>{{add.state}}</td>
+          <td>{{add.number}}</td>
+          <td>{{add.city}}</td>         
+          <td>{{add.pincode}}</td>
+          <td>{{add.address}}</td>
+          <td>
+            <img src="../assets/create-black-18dp.svg" (click)="updateById(add.id)"/>
+            <img src="../assets/delete-black-18dp.svg" (click)="deleteAddressBookById(add.id)"/>
+          </td>
+      </tr>
+        </table>
+    </div>
+</div>
